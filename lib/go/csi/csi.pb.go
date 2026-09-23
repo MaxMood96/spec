@@ -2807,8 +2807,9 @@ type VolumeHealth struct {
 	// ones, but MUST NOT remove an older error entry from
 	// health_statuses until that condition is no longer present.
 	//
-	// COs MUST ignore unknown VolumeHealthErrorType values, that they
-	// don't know about.
+	// The CO MUST NOT infer semantics or take automated action based on
+	// an unknown VolumeHealthErrorType value and MAY report it for
+	// observability purposes.
 	//
 	// For example:
 	//   - CSI spec v1.12.3
